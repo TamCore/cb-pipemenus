@@ -44,11 +44,11 @@ elif [[ $1 = '--install-dropbox' ]]; then
     case $platform in
     'x86_64')
         #DROPBOXURL='http://packages.crunchbang.org/waldorf-files/dropbox/64/dropbox.tar.gz'
-        DROPBOXURL='http://www.dropbox.com/download?plat=lnx.x86_64'
+        DROPBOXURL='https://www.dropbox.com/download?plat=lnx.x86_64'
         ;;
     *)
         #DROPBOXURL='http://packages.crunchbang.org/waldorf-files/dropbox/32/dropbox.tar.gz'
-        DROPBOXURL='http://www.dropbox.com/download?plat=lnx.x86'
+        DROPBOXURL='https://www.dropbox.com/download?plat=lnx.x86'
         ;;
     esac
     
