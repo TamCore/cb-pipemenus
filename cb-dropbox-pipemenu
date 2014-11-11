@@ -105,7 +105,7 @@ else
         menuItem 'Find out more about Dropbox' 'x-www-browser http://db.tt/5mJg9lb'
     else
         [[ -d $HOME/Dropbox ]] &&
-            menuItem 'Open Dropbox Folder' 'thunar $HOME/Dropbox'
+            menuItem 'Open Dropbox Folder' 'xdg-open $HOME/Dropbox'
 
         if ! pidof dropbox > /dev/null; then
             menuItem 'Start Dropbox' 'cb-dropbox-pipemenu --start-dropbox'
