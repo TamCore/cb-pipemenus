@@ -1,28 +1,30 @@
 # Maintainer: Philipp 'TamCore' B. <philipp [at] tamcore [dot] eu>
 
-pkgname=cb-pipemenus
+pkgname=cb-pipemenus-git
 pkgver=0.13
 pkgrel=1
 pkgdesc="various Openbox pipemenus"
 arch=(any)
-url="https://github.com/corenominal/cb-pipemenus"
-depends=('openbox' 'zenity' 'terminator' 'wget' 'compton' 'curl' 'tar')
+url="https://github.com/TamCore/cb-pipemenus"
+depends=('openbox' 'zenity' 'terminator')
+provides=('cb-pipemenus')
+replaces=('cb-pipemenus')
+conflicts=('cb-pipemenus')
 optdepends=(
     'python2-paramiko: for cb-sshconfig-pipemenu'
     'mesa-demos: for cb-compositor'
     'gksu: for cb-printing-pipemenu'
+    'compton: for cb-compton'
+    'wget: for cb-dropbox-pipemenu'
+    'curl: for cb-dropbox-pipemenu'
+    'tar: for cb-dropbox-pipemenu'
 )
 license=('custom')
-source=(https://github.com/corenominal/cb-pipemenus/archive/master.zip)
-sha256sums=('e2cfb418a35d4a5e62455c2beba02c3a312b9b2c7c2b1f8863c554e5a35b7474')
-
-prepare() {
-  cd "${pkgname}-master"
-  sed -i 's/env python$/env python2/' cb-*
-}
+source=(git://github.com/TamCore/cb-pipemenus.git)
+sha256sums=('SKIP')
 
 package() {
-  cd "${pkgname}-master"
+  cd "${pkgname%-git}"
   for file in cb-*
   do
     install -D -m755 $file "${pkgdir}/usr/bin/${file}"
