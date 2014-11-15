@@ -8,6 +8,8 @@ with warnings.catch_warnings():
 cfgdir = os.getenv("HOME")+"/.ssh"
 cfgfile = cfgdir+"/config"
 
+have_thunar = os.path.isfile('/usr/bin/thunar')
+
 try:
 	config_file = file(cfgfile)
 except IOError:
@@ -50,13 +52,14 @@ if len(hosts) >= 2:
 			print '            </command>'
 			print '        </action>'
 			print '    </item>\n'
-			print '    <item label="Browse with Thunar">'
-			print '        <action name="Execute">'
-			print '            <command>'
-			print '                thunar ssh://'+h['config']['hostname']+port[1]
-			print '            </command>'
-			print '        </action>'
-			print '    </item>\n'
+			if have_thunar:
+				print '    <item label="Browse with Thunar">'
+				print '        <action name="Execute">'
+				print '            <command>'
+				print '                thunar ssh://'+h['config']['hostname']+port[1]
+				print '            </command>'
+				print '        </action>'
+				print '    </item>\n'
 			print '</menu>\n'
 	print '<separator/>\n'
 
