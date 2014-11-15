@@ -16,7 +16,7 @@ elif [[ $1 = '--server' ]]; then
     terminator --title='Install VNC Server' --command='cb-remote-desktop-pipemenu --install-server'
 
 elif [[ $1 = '--install-viewer' ]]; then
-    promptInstall 'REMOTE DESKTOP CLIENT' 'TightVNC Viewer' 'xtightvncviewer'
+    promptInstall 'REMOTE DESKTOP CLIENT' 'TightVNC Viewer' 'tigervnc'
 
 elif [[ $1 = '--install-server' ]]; then
     promptInstall  'REMOTE DESKTOP SERVER' 'Vino VNC server' 'vino'
@@ -26,7 +26,7 @@ else
     menuStart
 
     # Viewer
-    if type 'xtightvncviewer' &> /dev/null; then
+    if type 'vncviewer' &> /dev/null; then
         menuItem 'Viewer' 'vncviewer'
     else
         menuItem 'Install Viewer' 'cb-remote-desktop-pipemenu --viewer'
