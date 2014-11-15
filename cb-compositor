@@ -22,11 +22,7 @@ if [[ $1 = '--edit' ]]; then
     [[ ! -f $HOME/.config/compton.conf ]] &&
         cp '/etc/xdg/compton.conf' "$HOME/.config/compton.conf"
 
-    if [[ -x /usr/bin/geany ]]; then
-        geany "$HOME/.config/compton.conf" &
-    else
-        terminator --command='nano "$HOME/.config/compton.conf"'
-    fi
+    xdg-open "$HOME/.config/compton.conf" &
 elif [[ $1 = '--toggle' || $1 = '--start' ]]; then # Toggle compositing with compton. 
     # TODO why --toggle and --start act exactly the same?
     if ! pidof compton > /dev/null; then

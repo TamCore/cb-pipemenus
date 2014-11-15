@@ -66,7 +66,7 @@ if len(hosts) >= 2:
 print '<item label="Edit ~/.ssh/config">'
 print '    <action name="Execute">'
 print '        <command>'
-print '            geany ~/.ssh/config'
+print '            xdg-open ~/.ssh/config'
 print '        </command>'
 print '    </action>'
 print '</item>\n'
