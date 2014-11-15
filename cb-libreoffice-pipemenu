@@ -14,7 +14,7 @@ if [[ $1 = '--install' ]]; then
     terminator --title='Install LibreOffice' --command='cb-libreoffice-pipemenu --install-lo'
 
 elif [[ $1 = '--install-lo' ]]; then
-    promptInstall 'LIBREOFFICE' 'LibreOffice' 'cb-meta-libreoffice'
+    promptInstall 'LIBREOFFICE' 'LibreOffice' 'libreoffice-fresh'
 
 else
     # Pipemenu
