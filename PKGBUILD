@@ -10,6 +10,7 @@ depends=('openbox' 'zenity' 'terminator' 'wget' 'compton' 'curl' 'tar')
 optdepends=(
     'python2-paramiko: for cb-sshconfig-pipemenu'
     'mesa-demos: for cb-compositor'
+    'gksu: for cb-printing-pipemenu'
 )
 license=('custom')
 source=(https://github.com/corenominal/cb-pipemenus/archive/master.zip)

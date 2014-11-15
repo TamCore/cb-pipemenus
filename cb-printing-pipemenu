@@ -14,7 +14,7 @@ if [[ $1 = '--install' ]]; then
     terminator --title='Install Printer Support' --command='cb-printing-pipemenu --install-printing'
 
 elif [[ $1 = '--install-printing' ]]; then
-    promptInstall 'PRINTING SUPPORT' 'printing support' 'cb-meta-printer-support'
+    promptInstall 'PRINTING SUPPORT' 'printing support' 'system-config-printer'
 
 else
     # Pipemenu
