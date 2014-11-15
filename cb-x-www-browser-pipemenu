@@ -97,11 +97,11 @@ elif [[ $1 = --install-* ]]; then
 
         clear
         say 'Updating sources...' 1
-        sudo apt-get update
+        sudo pacman -Sy
 
         clear
         say 'Installing package...' 1
-        sudo apt-get install -y "$packageName" || continue
+        sudo pacman --noconfirm -S "$packageName" || continue
 
         clear
         say
